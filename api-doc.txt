@@ -1,0 +1,55 @@
+One record looks like this when it comes from front-end
+ {
+    "first_name": "Joe",
+    "last_name": "Smith",
+    "userid": "jsmith",
+    "groups": ["admins", "users"]
+ }
+
+
+##########USERS#############
+Backend stores the userrecords like this since this design helps us make all our operations real quick
+
+{
+"uerid":{
+    "last_name"
+    "first_name"
+    "groups"
+  },
+"userid2":{
+  "last_name"
+  "first_name"
+  "groups"
+ }
+}
+#1-GET Returns the matching user record or 404 if none exist.
+http://localhost:5000/userrecord/api/v1.0/users/<userid>
+
+#2-POST Creates a new user record
+http://localhost:5000/userrecord/api/v1.0/users/
+
+#3-DELETE
+http://localhost:5000/userrecord/api/v1.0/users/<userid>
+
+#4-PUT
+http://localhost:5000/userrecord/api/v1.0/users/<userid>
+
+
+############GROUPS##########
+we also maintain a dict for group name and membership since it also makes our group operations quick
+
+{
+"groupname":"[list of users]"
+}
+
+#5- GET group members
+http://localhost:5000/userrecord/api/v1.0/groups/<group name>
+
+#6 - POST create a new group
+http://localhost:5000/userrecord/api/v1.0/groups
+
+#7 - PUT updates the membership for group
+http://localhost:5000/userrecord/api/v1.0/groups/<group name>
+
+#8 - DELETE a group
+http://localhost:5000/userrecord/api/v1.0/groups/<group name>
